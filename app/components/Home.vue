@@ -2,14 +2,26 @@
     <Page class="page">
         <GridLayout>
             <Label class="title" text="The hunt for the single thread october" textWrap="true"/>
-            <Button text="Jouer" @tap="onButtonTap" />
+            <Button text="Jouer" @tap="onPlayButtonTap" />
         </GridLayout>
     </Page>
 </template>
 
 <script>
+    import Grid from "./Grid";
+
     export default {
-        name: "Home"
+        name: "Home",
+        data() {
+            return {
+                grid: Grid
+            }
+        },
+        methods: {
+            onPlayButtonTap() {
+                this.$navigateTo(Grid);
+            }
+        }
     };
 </script>
 
