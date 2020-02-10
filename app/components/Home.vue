@@ -2,7 +2,7 @@
     <Page class="page">
         <GridLayout>
             <Label class="title" text="The hunt for the single thread october" textWrap="true"/>
-            <Button text="Jouer" @tap="onPlayButtonTap" />
+            <Button text="Jouer" @tap="onPlayButtonTap"></Button>
         </GridLayout>
     </Page>
 </template>
