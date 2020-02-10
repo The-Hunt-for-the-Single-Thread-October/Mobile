@@ -1,17 +1,17 @@
 <template>
-    <Label class="cell" :text="col+','+row" :row="row" :col="col" @tap="clicked"/>
+    <Label class="cell" :text="x+','+y" :col="x" :row="y" @tap="clicked"/>
 </template>
 
 <script>
     export default {
         name: "Cell",
         props: [
-            "row",
-            "col"
+            "x",
+            "y"
         ],
         methods: {
             clicked() {
-                this.$bus.$emit('cellClicked', {row: this.row, col: this.col});
+                this.$bus.$emit('cellClicked', {x: this.x, y: this.y});
             }
         }
     }

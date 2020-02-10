@@ -2,16 +2,16 @@
     <Page>
         <StackLayout>
             <GridLayout columns="auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto" rows="auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto">
-                <Cell v-for="index in col" :row="index" :col="1"/>
-                <Cell v-for="index in col" :row="index" :col="2"/>
-                <Cell v-for="index in col" :row="index" :col="3"/>
-                <Cell v-for="index in col" :row="index" :col="4"/>
-                <Cell v-for="index in col" :row="index" :col="5"/>
-                <Cell v-for="index in col" :row="index" :col="6"/>
-                <Cell v-for="index in col" :row="index" :col="7"/>
-                <Cell v-for="index in col" :row="index" :col="8"/>
-                <Cell v-for="index in col" :row="index" :col="9"/>
-                <Cell v-for="index in col" :row="index" :col="10"/>
+                <Cell v-for="index in col" :x="index" :y="1"/>
+                <Cell v-for="index in col" :x="index" :y="2"/>
+                <Cell v-for="index in col" :x="index" :y="3"/>
+                <Cell v-for="index in col" :x="index" :y="4"/>
+                <Cell v-for="index in col" :x="index" :y="5"/>
+                <Cell v-for="index in col" :x="index" :y="6"/>
+                <Cell v-for="index in col" :x="index" :y="7"/>
+                <Cell v-for="index in col" :x="index" :y="8"/>
+                <Cell v-for="index in col" :x="index" :y="9"/>
+                <Cell v-for="index in col" :x="index" :y="10"/>
             </GridLayout>
 
             <Label :text="'You clicked on: '+message" />
@@ -36,7 +36,7 @@
         },
         mounted() {
             this.$bus.$on('cellClicked', cellInfo => {
-                this.message = cellInfo.col+','+cellInfo.row;
+                this.message = cellInfo.x+','+cellInfo.y;
             });
         }
     }
