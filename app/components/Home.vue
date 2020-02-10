@@ -12,11 +12,6 @@
 
     export default {
         name: "Home",
-        data() {
-            return {
-                grid: Grid
-            }
-        },
         methods: {
             onPlayButtonTap() {
                 this.$navigateTo(Grid);
