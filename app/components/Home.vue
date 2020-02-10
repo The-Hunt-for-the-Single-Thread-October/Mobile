@@ -1,41 +1,45 @@
 <template>
-    <Page>
-        <ActionBar>
-            <Label text="Home"></Label>
-        </ActionBar>
-
+    <Page class="page">
         <GridLayout>
-            <Label class="info">
-                <FormattedString>
-                    <Span class="fas" text.decode="&#xf135; "/>
-                    <Span :text="message"/>
-                </FormattedString>
-            </Label>
+            <Label class="title" text="The hunt for the single thread october" textWrap="true"/>
+            <Button text="Jouer" @tap="onButtonTap" />
         </GridLayout>
     </Page>
 </template>
 
 <script>
     export default {
-        computed: {
-            message() {
-                return "Blank {N}-Vue app";
-            }
-        }
+        name: "Home"
     };
 </script>
 
 <style scoped lang="scss">
-    @import '~@nativescript/theme/scss/variables/blue';
-
-    // Custom styles
-    .fas {
-        @include colorize($color: accent);
+    .title{
+        color: white;
+        font-size: 40em;
+        font-weight: bold;
+        text-align: center;
+        vertical-align: top;
+        margin-top: 2%;
+        width: 90%;
     }
 
-    .info {
-        font-size: 20;
-        horizontal-align: center;
-        vertical-align: center;
+    button{
+        background-color: #007aff;
+        color: white;
+        font-size: 25em;
+        font-weight: bold;
+        vertical-align: bottom;
+        margin-bottom: 25%;
+        width: 60%;
+        border-radius: 5%;
     }
+
+    .page{
+        background-image: url("~/assets/img/main_background.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center top;
+    }
+
 </style>
