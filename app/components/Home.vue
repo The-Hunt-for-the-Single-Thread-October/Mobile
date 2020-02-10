@@ -8,9 +8,22 @@
 </template>
 
 <script>
+    import FinPartie from "./FinPartie";
+
     export default {
-        name: "Home"
+        name: "Home",
+
+        components:{
+            FinPartie,
+        },
+
+        methods:{
+            onButtonTap() {
+                this.$navigateTo(FinPartie);
+            }
+        }
     };
+
 </script>
 
 <style scoped lang="scss">
