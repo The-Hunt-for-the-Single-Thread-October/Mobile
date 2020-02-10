@@ -1,6 +1,5 @@
 <template>
     <Page class="page">
-
         <GridLayout>
             <Label class="title" text="The hunt for the single thread october" textWrap="true"/>
             <Button text="Jouer" @tap="onButtonTap" />
@@ -10,11 +9,7 @@
 
 <script>
     export default {
-        computed: {
-            message() {
-                return "Blank {N}-Vue appp";
-            }
-        }
+        name: "Home"
     };
 </script>
 
@@ -32,20 +27,19 @@
     button{
         background-color: #007aff;
         color: white;
-        font-size: 20em;
+        font-size: 25em;
         font-weight: bold;
         vertical-align: bottom;
         margin-bottom: 25%;
-        width: 40%;
+        width: 60%;
         border-radius: 5%;
     }
 
     .page{
-        background-image: url("~/assets/img/Sans titre.png");
+        background-image: url("~/assets/img/main_background.png");
         background-size: cover;
         background-repeat: no-repeat;
-        /* background-attachment: fixed; */ /* not supported in {N} yet */
-        background-position: center top; /* instead set ypos to top to avoid scroll-up */
+        background-position: center top;
     }
 
 </style>
