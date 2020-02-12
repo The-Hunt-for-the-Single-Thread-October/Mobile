@@ -3,17 +3,6 @@
         <GridLayout>
             <Label class="title" text="The hunt for the single thread october" textWrap="true"/>
             <Button text="Jouer" @tap="scan"></Button>
-
-            <BarcodeScanner
-                    row="1"
-                    height="300"
-                    formats="QR_CODE"
-                    beepOnScan="true"
-                    reportDuplicates="true"
-                    preferFrontCamera="false"
-                    @scanResult="onScanResult"
-                    v-if="isIOS">
-            </BarcodeScanner>
         </GridLayout>
     </Page>
 </template>
