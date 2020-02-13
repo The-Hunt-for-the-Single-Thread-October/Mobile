@@ -19,6 +19,9 @@
                 isIOS
             }
         },
+        mounted(){
+            this.$io.connect()
+        },
         methods: {
             onPlayButtonTap() {
                 this.$navigateTo(Grid);
@@ -46,16 +49,7 @@
                     }
                 }).then(
                     (result) => {
-                        console.log("--- scanned: " + result.text);
-                        // Note that this Promise is never invoked when a 'continuousScanCallback' function is provided
-                        setTimeout(function () {
-                            // if this alert doesn't show up please upgrade to {N} 2.4.0+
-                            alert({
-                                title: "Scan result",
-                                message: "Format: " + result.format + ",\nValue: " + result.text,
-                                okButtonText: "OK"
-                            });
-                        }, 500);
+                        this.$io.emit("join",result.text);
                     },
                     (errorMessage) => {
                         console.log("No scan. " + errorMessage);
