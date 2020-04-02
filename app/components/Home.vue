@@ -19,9 +19,6 @@
                 isIOS
             }
         },
-        mounted(){
-            this.$io.connect()
-        },
         methods: {
             onScanResult(evt) {
                 console.log(`onScanResult: ${evt.text} (${evt.format})`);
@@ -45,9 +42,7 @@
                     }
                 }).then(
                     (result) => {
-                        console.log(result.text)
-                        this.$navigateTo(BattleshipGame);
-                        //this.$io.emit("join",result.text);
+                        this.$navigateTo(BattleshipGame, { props:{ room: result.text }});
                     },
                     (errorMessage) => {
                         console.log("No scan. " + errorMessage);
