@@ -10,6 +10,7 @@
 <script>
     import {isIOS} from "tns-core-modules/platform";
     import {BarcodeScanner} from "nativescript-barcodescanner";
+    import BattleshipGame from "./BattleshipGame";
 
     export default {
         name: "Home",
@@ -45,6 +46,7 @@
                 }).then(
                     (result) => {
                         console.log(result.text)
+                        this.$navigateTo(BattleshipGame);
                         //this.$io.emit("join",result.text);
                     },
                     (errorMessage) => {
