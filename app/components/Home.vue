@@ -8,7 +8,6 @@
 </template>
 
 <script>
-    import Grid from "./Grid";
     import {isIOS} from "tns-core-modules/platform";
     import {BarcodeScanner} from "nativescript-barcodescanner";
 
@@ -23,10 +22,6 @@
             this.$io.connect()
         },
         methods: {
-            onPlayButtonTap() {
-                this.$navigateTo(Grid);
-            },
-
             onScanResult(evt) {
                 console.log(`onScanResult: ${evt.text} (${evt.format})`);
             },
@@ -49,7 +44,8 @@
                     }
                 }).then(
                     (result) => {
-                        this.$io.emit("join",result.text);
+                        console.log(result.text)
+                        //this.$io.emit("join",result.text);
                     },
                     (errorMessage) => {
                         console.log("No scan. " + errorMessage);
