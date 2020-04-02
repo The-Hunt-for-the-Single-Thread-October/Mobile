@@ -42,7 +42,8 @@
                     }
                 }).then(
                     (result) => {
-                        this.$navigateTo(BattleshipGame, { props:{ room: result.text }});
+                        let room = JSON.parse(result.text)
+                        this.$navigateTo(BattleshipGame, { props:{ room: room }});
                     },
                     (errorMessage) => {
                         console.log("No scan. " + errorMessage);
