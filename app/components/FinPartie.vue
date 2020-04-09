@@ -1,7 +1,7 @@
 <template>
     <Page class="page">
         <StackLayout>
-            <Label class="Title" :text="Resultat" text="Victoire ! "/>
+            <Label class="Title" :text="Resultat"/>
 
             <Button class="buttonRejouer" text="Rejouer" @tap="onButtonTap" />
             <Button class="buttonQuitter" text="Quitter" @tap="ReturnHome" />
@@ -27,7 +27,8 @@
                 this.$navigateTo(Home);
             },
             onButtonTap(){
-                //relancer une partie
+                this.$navigateTo(Home);
+                Home.methods.scan();
             }
         }
     };
