@@ -3,8 +3,8 @@
         <StackLayout>
             <Label class="Title" :text="Resultat"/>
 
-            <Button class="buttonRejouer" text="Rejouer" @tap="onButtonTap" />
-            <Button class="buttonQuitter" text="Quitter" @tap="ReturnHome" />
+            <Button class="buttonRejouer" text="Rejouer" @tap="returnHome" />
+            <Button class="buttonQuitter" text="Quitter" @tap="returnHome" />
         </StackLayout>
     </Page>
 </template>
@@ -23,12 +23,8 @@
         },
 
         methods: {
-            ReturnHome(){
+            returnHome(){
                 this.$navigateTo(Home);
-            },
-            onButtonTap(){
-                this.$navigateTo(Home);
-                Home.methods.scan();
             }
         }
     };

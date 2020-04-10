@@ -29,7 +29,6 @@
                 this.oWebViewInterface = new webViewInterfaceModule.WebViewInterface(webView, 'http://51.91.8.97:3000?id='+this.room.id+'&maxClients='+this.room.maxClients+'&clients='+this.room.clients);
 
                 this.oWebViewInterface.on("gameEnded", result => {
-                    console.log("game ended with: "+result);
                     this.$navigateTo(FinPartie, {props: {Resultat: result}});
                 });
             }
